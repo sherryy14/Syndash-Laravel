@@ -3,7 +3,7 @@
 
 @section('main')
 <div class="row">
-    <div class="col-xl-7 mx-auto">
+    <div class="col-xl-7 mx-auto mt-4">
         <h6 class="mb-0 text-uppercase">Product</h6>
         <hr>
         <div class="card border-top border-0 border-4 border-primary">
@@ -21,11 +21,38 @@
                 <table class="table table-hover text-center">
                     <thead>
                         <tr class="table-active">
-                            <th>ID</th>
-                            <th>NAME</th>
+                            <th>IMAGE</th>
+                            <th>TITLE</th>
+                            <th>PRICE</th>
+                            <th>UNIT</th>
+                            <th>CATEGORY</th>
+                            <th>AVAILABLITY</th>
+                            <th>STATUS</th>
                         </tr>
                     </thead>
                     <tbody>
+
+                        @foreach($products as $product)
+                        <tr>
+                            <td><img src="{{ asset('storage/upload/' . $product->file1) }}" alt="" width="100" height="100"></td>
+
+
+                            <td>{{ $product->title }}</td>
+                            <td>${{ $product->price }}</td>
+                            <td>{{ $product->unit }}</td>
+                            <td>{{ $product->category->category }}</td>
+                            <td>{!! ($product->availability == null)? '<span class="badge bg-danger">Not Available</span>' : '<span class="badge bg-success">Available</span>' !!}</td>
+                            <td>
+                                @if ($product->status == 'Active')
+                                    <span class="badge rounded-pill bg-success">{{ $product->status }}</span>
+                                @else
+                                    <span class="badge rounded-pill bg-danger">{{ $product->status }}</span>
+                                @endif
+                            </td>
+                            
+                        </tr>
+
+                        @endforeach
                        
                     </tbody>
                 </table>

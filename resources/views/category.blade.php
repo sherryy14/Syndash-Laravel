@@ -23,6 +23,7 @@
                         <tr class="table-active">
                             <th>ID</th>
                             <th>NAME</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,6 +31,7 @@
                         <tr>
                             <td>{{$category->cat_id}}</td>
                             <td>{{$category->category}}</td>
+                            <td><a href="/add-category/{{$category->cat_id}}">Edit</a></td>
                         </tr>
 
                         @endforeach

@@ -14,7 +14,7 @@
                     <h5 class="mb-0 text-primary">Category</h5>
                 </div>
                 <hr>
-                <form class="row g-3" method="post" action="{{route('addcategoryname')}}">
+                <form class="row g-3" method="post" action="{{$url}}">
                     @csrf
                     
                     <div class="col-md-6 offset-3">
