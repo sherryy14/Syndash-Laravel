@@ -3,7 +3,7 @@
 
 @section('main')
 <div class="row">
-    <div class="col-xl-7 mx-auto">
+    <div class="me-5 col-xl-9 mx-auto mt-4">
         <h6 class="mb-0 text-uppercase">Category</h6>
         <hr>
         <div class="card border-top border-0 border-4 border-primary">
@@ -31,7 +31,7 @@
                         <tr>
                             <td>{{$category->cat_id}}</td>
                             <td>{{$category->category}}</td>
-                            <td><a href="/add-category/{{$category->cat_id}}">Edit</a></td>
+                            <td><a href="/edit-category/{{$category->cat_id}}" class="btn btn-warning">Edit</a></td>
                         </tr>
 
                         @endforeach

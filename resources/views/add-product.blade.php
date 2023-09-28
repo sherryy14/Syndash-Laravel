@@ -10,12 +10,12 @@
                     <div class="card-title d-flex align-items-center">
                         <div><i class="bx bxs-user me-1 font-22 text-primary"></i>
                         </div>
-                        <h5 class="mb-0 text-primary">Product</h5>
+                        <h5 class="mb-0 text-primary">{{ $title }} Product</h5>
                     </div>
                     <hr>
 
 
-                    <form action="{{ route('addproductname') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ $url }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         @if (Session::has('success'))
@@ -34,8 +34,8 @@
                                             <!-- input -->
                                             <div class="mb-3 col-lg-6">
                                                 <label class="form-label">Title</label>
-                                                <input type="text" name="title" class="form-control"
-                                                    placeholder="Product Name">
+                                                <input type="text" name="title" value="{{ @$product->title }}"
+                                                    class="form-control" placeholder="Product Name">
                                                 <span class="text-danger">
                                                     @error('title')
                                                         {{ $message }}
@@ -49,9 +49,13 @@
                                                     <option selected disabled>Category Name</option>
 
                                                     @foreach ($categories as $category)
-                                                        <option value="{{ $category->cat_id }}">{{ $category->category }}
-                                                        </option>
+                                                        @php
+                                                            $select = $category->cat_id == @$product->category_id ? 'selected' : '';
+                                                        @endphp
+                                                        <option value="{{ $category->cat_id }}" {{ $select }}>
+                                                            {{ $category->category }}</option>
                                                     @endforeach
+
 
                                                 </select>
                                                 <span class="text-danger">
@@ -64,7 +68,7 @@
                                             <div class="mb-3 col-lg-6">
                                                 <label class="form-label">Weight</label>
                                                 <input type="number" name="weight" class="form-control"
-                                                    placeholder="Weight">
+                                                    value="{{ @$product->weight }}" placeholder="Weight">
                                                 <span class="text-danger">
                                                     @error('weight')
                                                         {{ $message }}
@@ -75,7 +79,7 @@
                                             <div class="mb-3 col-lg-6">
                                                 <label class="form-label">Units</label>
                                                 <input type="number" name="unit" min="1" class="form-control"
-                                                    placeholder="Unit">
+                                                    value="{{ @$product->unit }}" placeholder="Unit">
                                                 <span class="text-danger">
                                                     @error('unit')
                                                         {{ $message }}
@@ -91,28 +95,29 @@
 
                                                     <div class="fallback">
                                                         <input name="file1" type="file" class="form-control my-2"
-                                                            accept="image/png, image/gif, image/jpeg">
+                                                            accept="image/png, image/gif, image/jpeg" >
+                                                       
                                                         <span class="text-danger">
                                                             @error('file1')
                                                                 {{ $message }}
                                                             @enderror
                                                         </span>
-                                                        <input name="file2" type="file" class="form-control my-2"
-                                                            accept="image/png, image/gif, image/jpeg">
+                                                        <input name="file2" type="file" class="form-control my-2" accept="image/png, image/gif, image/jpeg" >
+                                                        
                                                         <span class="text-danger">
                                                             @error('file2')
                                                                 {{ $message }}
                                                             @enderror
                                                         </span>
-                                                        <input name="file3" type="file" class="form-control my-2"
-                                                            accept="image/png, image/gif, image/jpeg">
+                                                        <input name="file3" type="file" class="form-control my-2" accept="image/png, image/gif, image/jpeg" >
+                                                      
                                                         <span class="text-danger">
                                                             @error('file3')
                                                                 {{ $message }}
                                                             @enderror
                                                         </span>
-                                                        <input name="file4" type="file" class="form-control my-2"
-                                                            accept="image/png, image/gif, image/jpeg">
+                                                        <input name="file4" type="file" class="form-control my-2" accept="image/png, image/gif, image/jpeg" >
+                                                       
                                                         <span class="text-danger">
                                                             @error('file4')
                                                                 {{ $message }}
@@ -127,7 +132,7 @@
                                                 <h4 class="mb-3 h5">Product Descriptions</h4>
                                                 <!-- <div class="py-8" id="edi
                                 tor"></div> -->
-                                                <textarea name="description" placeholder="Write description" cols="30" rows="5" class="form-control"></textarea>
+                                                <textarea name="description" placeholder="Write description" cols="30" rows="5" class="form-control">{{ @$product->description }}</textarea>
                                                 <span class="text-danger">
                                                     @error('desc')
                                                         {{ $message }}
@@ -147,7 +152,8 @@
                                         <!-- input -->
                                         <div class="form-check form-switch mb-4">
                                             <input class="form-check-input" type="checkbox" role="switch"
-                                                id="flexSwitchStock" name="availability" value="1" checked>
+                                                id="flexSwitchStock" name="availability" value="1"
+                                                {{ @$product->availability == '1' ? 'checked' : '' }}>
                                             <label class="form-check-label" for="flexSwitchStock">In Stock</label>
 
                                         </div>
@@ -155,8 +161,8 @@
                                         <div>
                                             <div class="mb-3">
                                                 <label class="form-label">Product Code</label>
-                                                <input type="text" name="code" class="form-control"
-                                                    placeholder="Enter Product Title">
+                                                <input type="text" name="code" value="{{ @$product->code }}"
+                                                    class="form-control" placeholder="Enter Product Title">
                                                 <span class="text-danger">
                                                     @error('code')
                                                         {{ $message }}
@@ -169,13 +175,15 @@
                                                 <label class="form-label" id="productSKU">Status</label><br>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="status"
-                                                        id="inlineRadio1" value="Active" checked>
+                                                        id="inlineRadio1" value="Active"
+                                                        {{ @$product->status == 'Active' ? 'checked' : '' }}>
                                                     <label class="form-check-label" for="inlineRadio1">Active</label>
                                                 </div>
                                                 <!-- input -->
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="status"
-                                                        id="inlineRadio2" value="Disable">
+                                                        id="inlineRadio2" value="Disable"
+                                                        {{ @$product->status == 'Disable' ? 'checked' : '' }}>
                                                     <label class="form-check-label" for="inlineRadio2">Disabled</label>
                                                 </div>
                                                 <!-- input -->
@@ -193,8 +201,8 @@
                                         <!-- input -->
                                         <div class="mb-3">
                                             <label class="form-label">Price</label>
-                                            <input type="number" name="price" class="form-control"
-                                                placeholder="$0.00 ">
+                                            <input type="number" name="price" value="{{ @$product->price }}"
+                                                class="form-control" placeholder="$0.00 ">
                                             <span class="text-danger">
                                                 @error('price')
                                                     {{ $message }}
@@ -212,7 +220,7 @@
                                 <!-- button -->
                                 <div class="d-grid">
                                     <input type="submit" class="btn btn-primary" name="add"
-                                        value=" Create Product">
+                                        value=" {{ $title }} Product">
 
 
                                 </div>
@@ -227,4 +235,6 @@
 
         </div>
     </div>
-@endsection
+
+    
+    @endsection

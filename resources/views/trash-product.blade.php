@@ -13,9 +13,9 @@
                     <div class="card-title d-flex align-items-center">
                         <div><i class="bx bxs-user me-1 font-22 text-primary"></i>
                         </div>
-                        <h5 class="mb-0 text-primary">All Product</h5>
+                        <h5 class="mb-0 text-primary">Restore Product</h5>
                     </div>
-                    <a href="{{route('addproduct')}}" class="btn btn-primary">Add Product</a>
+                    <a href="{{route('viewproduct')}}" class="btn btn-primary">Go To Product</a>
                 </div>
                 <hr>
                 <table class="table table-hover text-center">
@@ -51,8 +51,8 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="/edit-product/{{$product->p_id}}" class="btn btn-warning">Edit</a>
-                                <a href="/trash-product/{{$product->p_id}}" class="btn btn-danger">Trash</a>
+                                <a href="/restore-product/{{$product->p_id}}" class="btn btn-success">Restore</a>
+                                <a href="/delete-product/{{$product->p_id}}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
 

@@ -7,25 +7,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<title>Syndash - Bootstrap4 Admin Template</title>
 	<!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<link rel="icon" href="{{ asset('assets/images/favicon-32x32.png')}}" type="image/png" />
 	<!-- Vector CSS -->
-	<link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+	<link href="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
 	<!--plugins-->
-	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-	<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
-	<link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<link href="{{ asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
+	<link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
+	<link href="{{ asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
 	<!-- loader-->
-	<link href="assets/css/pace.min.css" rel="stylesheet" />
-	<script src="assets/js/pace.min.js"></script>
+	<link href="{{ asset('assets/css/pace.min.css')}}" rel="stylesheet" />
+	<script src="{{ asset('assets/js/pace.min.js')}}"></script>
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto&display=swap" />
 	<!-- Icons CSS -->
-	<link rel="stylesheet" href="assets/css/icons.css" />
+	<link rel="stylesheet" href="{{ asset('assets/css/icons.css')}}" />
 	<!-- App CSS -->
-	<link rel="stylesheet" href="assets/css/app.css" />
-	<link rel="stylesheet" href="assets/css/dark-sidebar.css" />
-	<link rel="stylesheet" href="assets/css/dark-theme.css" />
+	<link rel="stylesheet" href="{{ asset('assets/css/app.css')}}" />
+	<link rel="stylesheet" href="{{ asset('assets/css/dark-sidebar.css')}}" />
+	<link rel="stylesheet" href="{{ asset('assets/css/dark-theme.css')}}" />
 </head>
 
 <body>
@@ -71,6 +71,13 @@
 						<div class="parent-icon icon-color-3"> <i class="bx bx-conversation"></i>
 						</div>
 						<div class="menu-title">Products</div>
+					</a>
+				</li>
+				<li>
+					<a href="{{route('viewtrashproduct')}}">
+						<div class="parent-icon icon-color-3"> <i class="bx bx-conversation"></i>
+						</div>
+						<div class="menu-title">Trash Products</div>
 					</a>
 				</li>
 				<li>
