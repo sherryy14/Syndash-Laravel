@@ -1,5 +1,7 @@
 @extends('layout.main')
-
+@section('title')
+   Add Product
+@endsection
 @section('main')
     <div class="row">
         <div class="col-lg-8 mx-auto">

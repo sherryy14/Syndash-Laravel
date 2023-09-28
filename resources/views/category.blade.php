@@ -1,6 +1,8 @@
 
 @extends('layout.main')
-
+@section('title')
+    Category    
+@endsection
 @section('main')
 <div class="row">
     <div class="me-5 col-xl-9 mx-auto mt-4">

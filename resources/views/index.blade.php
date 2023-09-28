@@ -1,6 +1,8 @@
 
 @extends('layout.main')
-
+@section('title')
+    Dashboard
+@endsection
 @section('main')
 	<!--page-wrapper-->
     <div class="page-wrapper">

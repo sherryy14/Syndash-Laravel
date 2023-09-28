@@ -30,3 +30,5 @@ Route::get('/trash-product/{id}',[ViewController::class, 'trashproduct'])->name(
 // Trash Product 
 Route::get('/view-trash-product',[ViewController::class, 'viewtrashproduct'])->name('viewtrashproduct');
 Route::get('/restore-product/{id}',[ViewController::class, 'restoreproduct'])->name('restoreproduct');
+// Detail Product 
+Route::get('/detail-product/{id}',[ViewController::class, 'detailproduct'])->name('detailproduct');

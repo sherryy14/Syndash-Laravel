@@ -5,10 +5,18 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<title>Syndash - Bootstrap4 Admin Template</title>
+	<title>@yield('title')</title>
 	<!--favicon-->
 	<link rel="icon" href="{{ asset('assets/images/favicon-32x32.png')}}" type="image/png" />
 	<!-- Vector CSS -->
+	 <!-- Owl carousel  -->
+	 <link
+	 rel="stylesheet"
+	 href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+	 integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+	 crossorigin="anonymous"
+	 referrerpolicy="no-referrer"
+   />
 	<link href="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
 	<!--plugins-->
 	<link href="{{ asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />

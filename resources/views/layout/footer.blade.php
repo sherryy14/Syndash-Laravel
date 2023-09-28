@@ -5,7 +5,7 @@
 		<!--End Back To Top Button-->
 		<!--footer -->
 		<div class="footer">
-			<p class="mb-0">Syndash @2020 | Developed By : <a href="https://themeforest.net/user/codervent" target="_blank">codervent</a>
+			<p class="mb-0">Syndash @2020 | Developed By : <a href="" target="_blank">Shahryar</a>
 			</p>
 		</div>
 		<!-- end footer -->
@@ -45,27 +45,48 @@
 		</div>
 	   </div>
 	   <!--end switcher-->
+	   <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+	     <!-- Owl carousel  -->
+		 <script
+		 src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+		 integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+		 crossorigin="anonymous"
+		 referrerpolicy="no-referrer"
+	   ></script>
+	   <script>
+		$(".owl-carousel").owlCarousel({
+		  loop: true, 
+		  margin: 10,
+		  responsive: {
+	   
+			1000: {
+			  items: 3,
+			},
+		  },
+		});
+  
+	   
+	  </script>
 	<!-- JavaScript -->
 	
 	<!-- Bootstrap JS -->
-	<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 
 	<!--plugins-->
-	<script src="{{ asset('assets/js/jquery.min.js')}}"></script>
-	<script src="{{ asset('assets/plugins/simplebar/js')}}/simplebar.min.js')}}"></script>
-	<script src="{{ asset('assets/plugins/metismenu/js')}}/metisMenu.min.js')}}"></script>
-	<script src="{{ asset('assets/plugins/perfect-scrollbar/js')}}/perfect-scrollbar.js')}}"></script>
+	<script src="{{asset('assets/plugins/simplebar/simplebar.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/perfect-scrollbar/js')}}/perfect-scrollbar.js')}}"></script>
 	<!-- Vector map JavaScript -->
-	<script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
-	<script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-	<script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-in-mill.js')}}"></script>
-	<script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-us-aea-en.js')}}"></script>
-	<script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-uk-mill-en.js')}}"></script>
-	<script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-au-mill.js')}}"></script>
-	<script src="{{ asset('assets/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
-	<script src="{{ asset('assets/js/index.js')}}"></script>
+	<script src="{{asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+	<script src="{{asset('assets/plugins/vectormap/jquery-jvectormap-in-mill.js')}}"></script>
+	<script src="{{asset('assets/plugins/vectormap/jquery-jvectormap-us-aea-en.js')}}"></script>
+	<script src="{{asset('assets/plugins/vectormap/jquery-jvectormap-uk-mill-en.js')}}"></script>
+	<script src="{{asset('assets/plugins/vectormap/jquery-jvectormap-au-mill.js')}}"></script>
+	<script src="{{asset('assets/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
+	<script src="{{asset('assets/js/index.js')}}"></script>
 	<!-- App JS -->
-	<script src="{{ asset('assets/js/app.js')}}"></script>
+	<script src="{{asset('assets/js/app.js')}}"></script>
 	<script>
 		new PerfectScrollbar('.dashboard-social-list');
 		new PerfectScrollbar('.dashboard-top-countries');

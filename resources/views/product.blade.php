@@ -1,6 +1,10 @@
 
 @extends('layout.main')
 
+@section('title')
+    Products
+@endsection
+
 @section('main')
 <div class="row">
     <div class="me-5 col-xl-9 mx-auto mt-4">
@@ -38,7 +42,7 @@
                             <td><img src="{{ asset('storage/upload/' . $product->file1) }}" alt="" width="100" height="100"></td>
 
 
-                            <td>{{ $product->title }}</td>
+                            <td><a href="/detail-product/{{$product->p_id}}">{{ $product->title }}</a></td>
                             <td>${{ $product->price }}</td>
                             <td>{{ $product->unit }}</td>
                             <td>{{ $product->category->category }}</td>

@@ -305,4 +305,11 @@ class ViewController extends Controller
         $data = compact('products');
         return view('/trash-product')->with($data);
     }
+
+
+    public function detailproduct($id){
+        
+        $product = Product::with('category')->find($id);
+        return view('product-detail',['product'=>$product]);
+    }
 }

@@ -1,5 +1,8 @@
 
 @extends('layout.main')
+@section('title')
+   Trash Products
+@endsection
 
 @section('main')
 <div class="row">
