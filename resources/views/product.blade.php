@@ -57,6 +57,7 @@
                             <td>
                                 <a href="/edit-product/{{$product->p_id}}" class="btn btn-warning">Edit</a>
                                 <a href="/trash-product/{{$product->p_id}}" class="btn btn-danger">Trash</a>
+                                <a href="/detail-product/{{$product->p_id}}" class="btn btn-success">View</a>
                             </td>
                         </tr>
 

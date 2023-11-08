@@ -25,7 +25,7 @@
                             <!-- left image container  -->
                             <div class="col-md-4">
                                 <img src="{{ asset('storage/upload/' . $product->file1) }}" alt=""
-                                    class="w-100 rounded" id="largeImage" />
+                                    class="w-100 rounded" id="largeImage" height="300" />
                                 <div class="col-12 mt-4">
                                     <div class="owl-carousel owl-theme">
                                         <div class="item"><img src="{{ asset('storage/upload/' . $product->file2) }}"

@@ -8,6 +8,7 @@ Route::get('/',[ViewController::class, 'index']);
 
 // Category 
 Route::get('/add-category',[ViewController::class, 'category'])->name('addcategory');
+
 Route::post('/add-category',[ViewController::class, 'addcategory'])->name('addcategoryname');
 
 Route::get('/view-category',[ViewController::class, 'viewcategory'])->name('viewcategory');
